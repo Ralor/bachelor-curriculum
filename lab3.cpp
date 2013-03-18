@@ -77,10 +77,6 @@ int solution()
     for(int i = 0; i < n; i++)
         mass[i] = rand() % 30 + 1;
 
-	int *mass2 = new int[n];
-	for(int i = 0; i < n; i++)
-        mass2[i] = mass[i];
-
     cout << "Current mass:" << "\n\t";
     for(int i = 0; i < n; i++)
         cout << mass[i] << " "; cout << endl;    
