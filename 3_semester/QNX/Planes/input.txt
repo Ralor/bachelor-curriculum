@@ -1,0 +1,6 @@
+2
+200 300 5
+
+number of planes
+x y z - size of box where planes are flying
+(make small "z" to make them flying in 2D surface, but remember - they can fall on the ground)
