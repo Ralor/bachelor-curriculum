@@ -1,0 +1,19 @@
+Databases:  
+  
+Basic course about structure, architecture and usage (forms, entity diagrams, SQL).  
+  
+Lectures (rus,ppt):  
+https://www.dropbox.com/sh/fpdsiyxktj9fbhi/AACG3FiRum-4yTJiRGoLGN5ka?dl=0  
+Tasks (rus,pdf):  
+https://www.dropbox.com/s/k27b11vk5ldds0w/databases_tasks.pdf?dl=0  
+  
+We are free to use anything we want, but helps/examples given for MS Access.  
+   
+I've decided to use PostgreSQL 9.3 as it is free, but currently is in active use and development.  
+  
+Wiki page:  
+https://en.wikipedia.org/wiki/PostgreSQL  
+Official site:  
+http://www.postgresql.org/  
+Documentation:  
+http://www.postgresql.org/docs/9.3/interactive/index.html  
