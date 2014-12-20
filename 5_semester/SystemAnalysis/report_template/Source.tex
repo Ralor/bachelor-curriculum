@@ -1,0 +1,30 @@
+\chapter{C++ codes}
+
+Ну а здесь я смачно затещщу стиль customcpp
+
+\lstset{style=customcpp}
+
+\section{First C++ code (not hw)}
+Пошло поехало. Почему-то отступ разны до и после листинга, не так ли? Да это же красная строка, блин! Вот это да!
+\begin{lstlisting}[caption={Elementary a+b code}, label={apbcode}]
+#include <iostream>
+using namespace std;
+int main() {
+	int a,b;
+	while(cin>>a>>b)
+		cout<<a+b<<endl;
+	return 0;
+}
+\end{lstlisting}
+На листинге \ref{apbcode} вы можете видеть бред! Сивка бурка сивая кошелка.
+\section{Advanced C++ code}
+\begin{lstlisting}[caption={Some advanced template magic}, label={templmagic}]
+// here is the example of bad variable naming
+template<typename U, typename V>
+std::pair<U,V> make_pair(const U& a, const V& b) {
+	return std::pair<U,V>(a,b);
+}
+\end{lstlisting}
+На листинге \ref{templmagic} вы видите еще куда больший бред!
+
+\newpage

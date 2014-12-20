@@ -1,0 +1,56 @@
+\documentclass[a4paper,12pt]{report}
+
+\usepackage[pdftex]{graphicx}
+\usepackage[unicode,pdftex]{hyperref} % to allow russian letters in bibliography
+
+\usepackage[T2A]{fontenc}
+\usepackage[cp1251]{inputenc}
+\usepackage[english,russian]{babel}
+
+\usepackage{amssymb,amsfonts,amsmath,mathtext,cite,enumerate,float}
+
+\usepackage{indentfirst} % section indentation (by usual paragraph indentation)
+\usepackage{setspace}    % setstretch
+\usepackage[labelsep=period]{caption}
+
+\usepackage{listings}
+\usepackage{xcolor}
+\input{listings_options}
+
+\usepackage{fncychap}
+\input{fncychap_options}
+
+%\setcounter{secnumdepth}{-1} % не нумеровать главы
+\setcounter{tocdepth}{2} % глубина оглавления
+
+\usepackage{geometry} % поля страницы
+\geometry{left=25mm}
+\geometry{right=20mm}
+\geometry{top=20mm}
+\geometry{bottom=20mm}
+
+\newcommand*{\No}{\textnumero}
+
+\renewcommand\normalsize{\fontsize{14}{16.8pt}\selectfont}
+
+\renewcommand{\theenumi}{\arabic{enumi}}
+\renewcommand{\labelenumi}{\arabic{enumi}}
+\renewcommand{\theenumii}{\arabic{enumii}}
+\renewcommand{\labelenumii}{\arabic{enumi}.\arabic{enumii}.}
+\renewcommand{\theenumiii}{\arabic{enumiii}}
+\renewcommand{\labelenumiii}{\arabic{enumi}.\arabic{enumii}.\arabic{enumiii}.}
+
+\renewcommand{\baselinestretch}{1.5}
+\righthyphenmin=2 
+
+\begin{document}
+
+\input{Title}
+
+\renewcommand{\contentsname}{Содержание}
+\tableofcontents 
+\newpage
+
+\input{Source}
+
+\end{document}
