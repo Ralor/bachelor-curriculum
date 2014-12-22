@@ -1,0 +1,339 @@
+	\chapter{Экспертная оценка свойств системы}
+	\section{Описание}
+		\paragraph{Цель работы}
+			Получить практические навыки экспертного оценивания 
+			систем различными методами и обработки результатов оценивания.
+		\paragraph{Формируемые компетенции}
+			\begin{itemize}
+			\item владение культурой мышления, способность к обобщению, 
+			анализу, восприятию информации, постановке цели и выбору путей её достижения (ОК-1) 
+			\item способность находить организационно-управленческие 
+			решения в нестандартных ситуациях и готовность нести за них ответственность (ОК-4)
+			\end{itemize}		
+		\paragraph{Самостоятельная работа}
+			Изучение методов выявления предпочтений экспертов (ранжирования, 
+			парных сравнений, непосредственной оценки, последовательного сравнения). 
+
+	\newpage
+	\section{Ход работы}
+		\paragraph{Формирование групп экспертов, выбор объектов оценивания}
+			Цель - выбор лучшего туристического логотипа Саратова, 
+			объекты выбраны из первой половины строчек голосования на 40+ вариантов.
+			\begin{multicols}{2}
+				\begin{Figure}
+				\centering
+				\captionsetup{type=figure}
+				\includegraphics[width=\linewidth]{8.jpg}
+				\caption{Проект 8}
+				\label{img:8}
+				\end{Figure}
+				
+				\begin{Figure}
+				\centering
+				\captionsetup{type=figure}
+				\includegraphics[width=\linewidth]{17.jpg}
+				\caption{Проект 17}
+				\label{img:17}
+				\end{Figure}
+				
+				\begin{Figure}
+				\centering
+				\captionsetup{type=figure}
+				\includegraphics[width=\linewidth]{28.jpg}
+				\caption{Проект 28}
+				\label{img:28}
+				\end{Figure}
+				
+				\begin{Figure}
+				\centering
+				\captionsetup{type=figure}
+				\includegraphics[width=\linewidth]{38.jpg}
+				\caption{Проект 38}
+				\label{img:38}
+				\end{Figure}
+			\end{multicols}
+			
+			\(x_1\)~-~Проект~8, \(x_2\)~-~Проект~17, \(x_3\)~-~Проект~28, \(x_4\)~-~Проект~38
+		\newpage
+		
+		\paragraph{Ранжирование систем}
+			Каждый эксперт ранжирует объекты по отдельности. В случае, если присвоенные 
+			им ранги совпадают, вычисляется среднее значение (связанные ранги).
+			\begin{table}[H]
+			\caption{Таблица оценок экспертов}
+			\label{tab:experts}
+			\centering
+				\begin{tabular}{|c|c|c|c|c|c|}
+				\hline
+				 & \(x_1\) & \(x_2\) & \(x_3\) & \(x_4\) & \(T\) \\
+				\hline
+				Эксперт 1 & 1 & 3.5 & 2 & 3.5 & 6 \\
+				\hline
+				Эксперт 2 & 3 & 3 & 1 & 3 & 24 \\
+				\hline
+				Эксперт 3 & 4 & 2 & 1 & 3 & 6 \\
+				\hline
+				Сумма & 8 & 8.5 & 4 & 9.5 & 36 \\
+				\hline
+				Обобщенный ранг & 2 & 3 & 1 & 4 & - \\
+				\hline
+				\(\Delta\) & -0.5 & -1 & 3.5 & -2 & - \\
+				\hline
+				\(\Delta^2\) & 0.25 & 1 & 12.25 & 4 & - \\
+				\hline
+				\end{tabular}
+			\end{table}					
+
+			% used link : http://math.semestr.ru/corel/example-concordance.php
+			
+			Оценим согласованность экспертов через коэффициент конкордации 
+			
+			\[
+			K = \frac{
+				12 \sum\limits_{j=1}^n \sum\limits_{i=1}^m 
+					( \overline{r} - r_{ij} )^2
+			}{
+				m^2(n^3-n) - m\sum\limits_{i=1}^{m}T_i
+			} = 
+			\frac{
+				12 \sum\limits_{j=1}^4 \sum\limits_{i=1}^3 
+					( 7.5 - r_{ij} )^2
+			}{
+				3^2(4^3-4) - 3*36
+			} = 0.48
+			\]
+
+			где 
+			
+			\begin{enumerate}	\itemsep 0pt \parskip 0pt \parsep 0pt 
+			\item[] \(m\) - количество экспертов
+			\item[] \(n\) - количество объектов
+			\item[] \(\overline{r}\) - средний ранг
+			\item[] \(T_i\) - показатель связанных рангов в \(i\)-й ранжировке,\\
+				\(T_i~=~\sum\limits_{k=1}^{H_i}{h_k}^3 - h_k\), 
+					где 
+					\begin{enumerate} \itemsep 0pt \parskip 0pt \parsep 0pt										
+					\item[] \(H_i\) - число групп равных рангов в \(i\) - й группе
+					\item[] \(h_k\) - число равных рангов в \(k\) - й группе связанных рангов
+					\end{enumerate}
+			\end{enumerate}		
+				
+			На основе вычисленного \(K\) дадим качественную характеристику согласованности мнений экспертов
+
+			\begin{table}[H]
+			\caption{Интервалы качественной оценки \(K\)}
+			\label{tab:kestimation}
+			\centering
+				\begin{tabular}{|c|c|c|c|c|}
+				\hline
+				\(...-0.3\) & \(0.3-0.5\) & \(0.5-0.7\)& \(0.7-0.9\) & \(0.9-...\) \\				
+				\hline
+				слабая & умеренная & заметная & высокая & очень высокая \\
+				\hline
+				\end{tabular}
+			\end{table}						
+			
+			Согласованность экспертов - умеренная (близка к заметной).
+		\newpage
+						
+		\paragraph{Парные сравнения систем}	
+			Каждый эксперт составляет матрицу парных сравнений, элемент которой равен
+			\begin{multicols}{2}
+			\[w_{ij} = 
+				\begin{cases}
+				1, & x_i \succeq x_j\\
+				0, & x_i \prec x_j
+				\end{cases}
+			\]
+			\vfill\columnbreak
+			Условия согласованности:
+			\begin{enumerate} \itemsep 0pt \parskip 0pt \parsep 0pt
+				\item[] \(w_{ii} = 1\)
+				\item[] \(w_{ij} = 1 \Rightarrow w_{ji} = 0\)
+				\item[] \(w_{ij} = 1 \land w_{jk} = 1 \Rightarrow w_{ik} = 1\)
+			\end{enumerate}
+			\end{multicols}			
+			
+			\begin{multicols}{3}
+			\begin{table}[H]
+			\caption{Эксперт 1}
+			\label{tab:pairsexp1}
+			\centering
+				\begin{tabular}{|c|c|c|c|c|}
+				\hline
+				& \(x_1\) & \(x_2\) & \(x_3\) & \(x_4\) \\
+				\hline
+				\(x_1\) & 1 & 1 & 1 & 1 \\
+				\hline 
+				\(x_2\) & 0 & 1 & 0 & 1 \\
+				\hline
+				\(x_3\) & 0 & 1 & 1 & 1 \\
+				\hline
+				\(x_4\) & 0 & 1 & 0 & 1 \\
+				\hline
+				\end{tabular}
+			\end{table}	
+			\vfill\columnbreak
+			\begin{table}[H]
+			\caption{Эксперт 2}
+			\label{tab:pairsexp2}
+			\centering
+				\begin{tabular}{|c|c|c|c|c|}
+				\hline
+				& \(x_1\) & \(x_2\) & \(x_3\) & \(x_4\) \\
+				\hline
+				\(x_1\) & 1 & 1 & 0 & 1 \\
+				\hline 
+				\(x_2\) & 1 & 1 & 0 & 1 \\
+				\hline
+				\(x_3\) & 1 & 1 & 1 & 1 \\
+				\hline
+				\(x_4\) & 1 & 1 & 0 & 1 \\
+				\hline
+				\end{tabular}
+			\end{table}	
+			
+			\vfill\columnbreak
+			
+			\begin{table}[H]
+			\caption{Эксперт 3}
+			\label{tab:pairsexp3}
+			\centering
+				\begin{tabular}{|c|c|c|c|c|}
+				\hline
+				& \(x_1\) & \(x_2\) & \(x_3\) & \(x_4\) \\
+				\hline
+				\(x_1\) & 1 & 0 & 0 & 0 \\
+				\hline 
+				\(x_2\) & 1 & 1 & 0 & 1 \\
+				\hline
+				\(x_3\) & 1 & 1 & 1 & 1 \\
+				\hline
+				\(x_4\) & 1 & 0 & 0 & 1 \\
+				\hline
+				\end{tabular}
+			\end{table}	
+			\vfill\columnbreak
+			\end{multicols}
+
+		Теперь составим результирующую матрицу, элемент которой равен единице, 
+		если единица есть не менее, чем в половине таблиц экспертов (в нашем случае - в двух таблицах).
+		
+		\begin{table}[H]
+		\caption{Обобщенная матрица}
+		\label{tab:summatr}
+		\centering
+			\begin{tabular}{|c|c|c|c|c|}
+			\hline
+			& \(x_1\) & \(x_2\) & \(x_3\) & \(x_4\) \\
+			\hline
+			\(x_1\) & 1 & 1 & 0 & 1 \\
+			\hline 
+			\(x_2\) & 1 & 1 & 0 & 1 \\
+			\hline
+			\(x_3\) & 1 & 1 & 1 & 1 \\
+			\hline
+			\(x_4\) & 1 & 1 & 0 & 1 \\
+			\hline
+			\end{tabular}
+		\end{table}	
+		
+		\paragraph{Непосредственная оценка систем}	
+			Для удобства экспертов ведем шкалу лингвистических оценок. 
+			\begin{table}[H]
+			\caption{Шкала лингвистических оценок}
+			\label{tab:lingmarks}
+			\centering
+				\begin{tabular}{|c|c|c|c|c|c|}
+				\hline
+				0 & 0.25 & 0.5 & 0.625 & 0.75 & 1 \\				
+				\hline
+				плохо & посредственно & удовлетвортиельно & хорошо & очень хорошо & отлично \\
+				\hline
+				\end{tabular}
+			\end{table}				
+			Для каждого эксперта примем компетентность \(k_i\) т., ч. 
+			\(k_1 + k_2 + k_3 = 1\). После получения экспертных оценок 
+			расчитаем обобщенные \(a_j = \sum\limits_{i=1}^{m}k_i a_{ij}\)
+			\begin{table}[H]
+			\caption{Результаты непосредственной оценки}
+			\label{tab:summarks}
+			\centering
+				\begin{tabular}{|c|c|c|c|c|c|}
+				\hline
+				& Компетентность & \(x_1\) & \(x_2\) & \(x_3\) & \(x_4\)  \\				
+				\hline
+				Эксперт 1 & 0.55 & 0.75 & 0.5 & 0.75 & 0.625  \\
+				\hline
+				Эксперт 2 & 0.3 & 0.625 & 0.5 & 0.75 & 0.5 \\
+				\hline
+				Эксперт 3 & 0.15 & 0.5 & 0.5 & 0.5 & 1 \\
+				\hline
+				Обобщенная оценка &  & 0.675 & 0.5 & 0.713 & 0.644 \\
+				\hline
+				\end{tabular}
+			\end{table}
+		\newpage
+		\paragraph{Последовательное сравнение методом Черчмена-Акоффа}
+			Расположим объекты в порядке предпочтения и дадим каждому некоторую оценку из \([0;1]\)
+			\begin{table}[H]
+			\captionsetup{labelformat=empty} 
+				\begin{tabular}{|ccccccc|}
+				\hline
+				\(x_1\) & & \(x_3\) & & \(x_4\) & & \(x_2\) \\
+				1 & \raisebox{1.5ex}[0cm][0cm]{\(\succ\)}
+				& 0.9 & \raisebox{1.5ex}[0cm][0cm]{\(\succ\)}
+				& 0.7 & \raisebox{1.5ex}[0cm][0cm]{\(\succ\)}
+				& 0.6 \\
+				\hline
+				\end{tabular}
+			\end{table}
+			Далее проделаем 3 шага, на каждом из которых примем решение, 
+			будет ли текущий объект иметь оценку большую, чем сумма оставшихся справа.
+			Соответсвенно принятому решению будем менять оценку, если потребуется.
+			\begin{table}[H]
+			\captionsetup{labelformat=empty} 
+				\begin{tabular}{|ccccccc|}
+				\hline
+				\(x_1\) & & \(x_3\) & & \(x_4\) & & \(x_2\) \\
+				1.7 & \raisebox{1.5ex}[0cm][0cm]{\(\prec\)}
+				& 0.9 & \raisebox{1.5ex}[0cm][0cm]{\(+\)}
+				& 0.7 & \raisebox{1.5ex}[0cm][0cm]{\(+\)}
+				& 0.6 \\
+				\hline
+				\end{tabular}
+			\end{table}
+			\begin{table}[H]
+			\captionsetup{labelformat=empty} 
+				\begin{tabular}{|ccccccc|}
+				\hline
+				\(x_1\) & & \(x_3\) & & \(x_4\) & & \(x_2\) \\
+				1.7 & & 1.4 & \raisebox{1.5ex}[0cm][0cm]{\(\succ\)}
+				& 0.7 & \raisebox{1.5ex}[0cm][0cm]{\(+\)}
+				& 0.6 \\
+				\hline
+				\end{tabular}
+			\end{table}
+			\begin{table}[H]
+			\captionsetup{labelformat=empty} 
+				\begin{tabular}{|ccccccc|}
+				\hline
+				\(x_1\) & & \(x_3\) & & \(x_4\) & & \(x_2\) \\
+				1.7 & & 1.4 & & 0.7 & \raisebox{1.5ex}[0cm][0cm]{\(\succ\)}
+				& 0.6 \\
+				\hline
+				\end{tabular}
+			\end{table}
+			
+			Теперь нормируем полученные оценки относительно их суммы
+			
+			\begin{table}[H]
+			\captionsetup{labelformat=empty} 
+				\begin{tabular}{|ccccccccc|}
+				\hline
+				\(x_1\) & & \(x_3\) & & \(x_4\) & & \(x_2\) & & \\
+				1.7 & + & 1.4 & + & 0.7 & +	& 0.6 & = & 4.4 \\
+				0.39 & & 0.31 & & 0.16 & & 0.14 & & \\
+				\hline
+				\end{tabular}
+			\end{table}
