@@ -1,0 +1,58 @@
+\documentclass[a4paper,12pt]{report}
+
+\usepackage[pdftex]{graphicx}
+\graphicspath{{C:/Users/ онстантин/[Opensource]/bachelor-curriculum/5_semester/SystemAnalysis/lab5/images/}}
+\usepackage[unicode,pdftex]{hyperref}
+
+\usepackage[T2A]{fontenc}
+\usepackage[cp1251]{inputenc}
+\usepackage[english,russian]{babel}
+
+\usepackage{amssymb,amsfonts,amsmath,mathtext,cite,enumerate,float}
+\restylefloat{table} % to add H option for tables
+
+\usepackage{multicol}
+\setlength{\columnsep}{1cm}
+
+\usepackage{indentfirst} % section indentation (by usual paragraph indentation)
+\usepackage{setspace}    % setstretch
+\usepackage[labelsep=period]{caption}
+
+\usepackage{tikz}
+\usepackage{pgfplots}
+
+\setcounter{secnumdepth}{-1} % не нумеровать главы
+\setcounter{tocdepth}{2} % глубина оглавлени€
+
+\usepackage{geometry} % пол€ страницы
+\geometry{left=25mm}
+\geometry{right=20mm}
+\geometry{top=20mm}
+\geometry{bottom=20mm}
+\captionsetup{belowskip=8pt,aboveskip=4pt} % отступы дл€ подписей
+
+
+\newcommand*{\No}{\textnumero}
+
+\renewcommand\normalsize{\fontsize{14}{16.8pt}\selectfont}
+
+\renewcommand{\theenumi}{\arabic{enumi}}
+\renewcommand{\labelenumi}{\arabic{enumi}}
+\renewcommand{\theenumii}{\arabic{enumii}}
+\renewcommand{\labelenumii}{\arabic{enumi}.\arabic{enumii}.}
+\renewcommand{\theenumiii}{\arabic{enumiii}}
+\renewcommand{\labelenumiii}{\arabic{enumi}.\arabic{enumii}.\arabic{enumiii}.}
+
+\renewcommand{\baselinestretch}{0.8}
+\righthyphenmin=2 
+
+\newenvironment{Figure} % to use images in multicols
+  {\par\medskip\noindent\minipage{\linewidth}}
+  {\endminipage\par\medskip}
+
+\begin{document}
+
+\input{Title}
+\input{Work}
+
+\end{document}
